@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lookalike Domain Hunting | Leonard Abanobi</title>
+<style>
+:root{--bg:#0b1220;--panel:#111a2e;--line:#22304d;--text:#dbe4f3;--muted:#8fa3c2;--accent:#2dd4bf;--high:#f87171;--med:#fbbf24;--low:#93c5fd;--ok:#4ade80}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
+.wrap{max-width:960px;margin:0 auto;padding:40px 16px 64px}
+a{color:var(--accent)}
+.tag{display:inline-block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);border:1px solid var(--accent);border-radius:4px;padding:2px 8px}
+h1{font-size:clamp(28px,5vw,42px);line-height:1.15;margin:14px 0 8px}
+h2{font-size:22px;margin:40px 0 12px;border-bottom:1px solid var(--line);padding-bottom:6px}
+.sub{color:var(--muted);margin:0 0 24px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin:24px 0}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:14px}
+.stat b{display:block;font-size:28px;color:var(--accent)}
+.stat span{color:var(--muted);font-size:13px}
+.callout{background:var(--panel);border-left:4px solid var(--high);padding:16px 18px;border-radius:6px}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--muted);font-weight:600}
+.scroll{overflow-x:auto}
+.v{font-weight:700;font-size:12px}
+.HIGH{color:var(--high)}.MEDIUM{color:var(--med)}.LOW{color:var(--low)}.BENIGN{color:var(--ok)}
+pre{background:#050a14;border:1px solid var(--line);border-radius:6px;padding:12px;overflow-x:auto;font-size:13px}
+ol.flow{counter-reset:s;list-style:none;padding:0}
+ol.flow li{counter-increment:s;position:relative;padding:8px 0 8px 40px}
+ol.flow li:before{content:counter(s);position:absolute;left:0;top:8px;width:26px;height:26px;border-radius:50%;background:var(--accent);color:#04211d;font-weight:700;text-align:center;line-height:26px;font-size:13px}
+ul li{margin-bottom:6px}
+footer{margin-top:48px;color:var(--muted);font-size:13px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<span class="tag">Threat Hunting · Fraud Prevention · OSINT</span>
+<h1>Lookalike Domain Hunting: HMRC Brand Impersonation</h1>
+<p class="sub">Proactive discovery and triage of registered lookalike domains that could be used for HMRC-themed phishing and refund fraud. Kali Linux · dnstwist · WHOIS · DNS · Certificate Transparency · urlscan.io · October 2026</p>
+
+<div class="stats">
+<div class="stat"><b>97</b><span>registered permutations</span></div>
+<div class="stat"><b>19</b><span>HMRC defensive registrations</span></div>
+<div class="stat"><b>4</b><span>closed as benign on evidence</span></div>
+<div class="stat"><b>3</b><span>placed on monitoring</span></div>
+<div class="stat"><b>1</b><span>HIGH: suspected staged infrastructure</span></div>
+</div>
+
+<div class="callout"><strong>Key finding.</strong> onlinehmrc[.]com sits outside HMRC's defensive registrations. It is privacy-masked, about one year old, mail-enabled, carries a fresh Let's Encrypt certificate and is live on a Frankfurt-hosted server, yet had no public scan history. The page was an untitled 1 KB placeholder: infrastructure prepared but not yet serving a lure. Recommended: block, takedown via the organisation's process, and monitor the certificate renewal due around 30 Oct.</div>
+
+<h2>Triage pipeline</h2>
+<ol class="flow">
+<li><strong>Generate:</strong> dnstwist against hmrc.gov.uk (baseline) and hmrc.com with fraud keywords and alternative TLDs.</li>
+<li><strong>Cluster:</strong> separate defensive registrations by shared IP and name servers (Com Laude / Demys).</li>
+<li><strong>Mail readiness:</strong> flag domains with MX records configured.</li>
+<li><strong>Registration:</strong> WHOIS age, registrar and registrant, looking for young + privacy proxy + retail registrar.</li>
+<li><strong>Certificates:</strong> Cert Spotter CT API (crt.sh was returning 502).</li>
+<li><strong>Hosting and content:</strong> dig, IP WHOIS, abuse contacts and a private urlscan.io scan. No suspect site was browsed directly.</li>
+</ol>
+<pre>dnstwist --registered --mxcheck --geoip --threads 20 \
+  --tld tlds.txt --dictionary words.txt --format csv hmrc.com > 02_lookalikes.csv</pre>
+
+<h2>Findings register</h2>
+<div class="scroll"><table>
+<tr><th>Domain</th><th>Created</th><th>Registrar</th><th>Signals</th><th>Verdict</th></tr>
+<tr><td>onlinehmrc[.]com</td><td>2025-09-26</td><td>Dynadot (privacy)</td><td>Live host, MX, LE cert 2026-08-01, no scan history</td><td class="v HIGH">HIGH</td></tr>
+<tr><td>hmrec[.]com</td><td>2026-03-04</td><td>Namecheap (privacy)</td><td>Mail forwarding, LE cert 2026-09-02, now parked</td><td class="v MEDIUM">MEDIUM</td></tr>
+<tr><td>hmrc[.]net</td><td>2025-01-07</td><td>Gname (redacted)</td><td>Exact brand, parked</td><td class="v MEDIUM">MEDIUM</td></tr>
+<tr><td>hmrc[.]site</td><td>2021-09-30</td><td>Namecheap</td><td>Exact brand, parked</td><td class="v LOW">LOW</td></tr>
+<tr><td>hmrc[.]org</td><td>2001-02-08</td><td>eNom</td><td>Predates HMRC (formed 2005)</td><td class="v LOW">LOW</td></tr>
+<tr><td>online-hmrc[.]com</td><td>2021-08-31</td><td>Com Laude</td><td>Registrant: HM Revenue &amp; Customs</td><td class="v BENIGN">BENIGN</td></tr>
+<tr><td>hrmrc[.]com</td><td>2023-10-20</td><td>Turkish registrar</td><td>Named unrelated company</td><td class="v BENIGN">BENIGN</td></tr>
+<tr><td>hmrdc[.]com</td><td>2006-10-28</td><td>PDR</td><td>Registrant matches acronym</td><td class="v BENIGN">BENIGN</td></tr>
+<tr><td>hrrc[.]com</td><td>1998-01-20</td><td>Network Solutions</td><td>Long-standing, unrelated</td><td class="v BENIGN">BENIGN</td></tr>
+</table></div>
+
+<h2>Analyst judgement</h2>
+<ul>
+<li><strong>Defensive registrations first:</strong> the obvious fraud keywords (hmrc-refund, verify-hmrc, claimhmrc…) are already HMRC-owned, so hunting effort goes to the gaps.</li>
+<li><strong>Hypothesis revised on evidence:</strong> a certificate pivot initially suggested a compromised business host. Later DNS showed that domain was parked, so the assessment was updated to "shared hosting account controlled by the same operator".</li>
+<li><strong>No false links:</strong> shared Namecheap parking IPs were not treated as a connection.</li>
+<li><strong>Source resilience:</strong> crt.sh outage → Cert Spotter; a single DNS snapshot missed a live A record, so high-priority domains need scheduled re-resolution.</li>
+<li><strong>OPSEC lesson:</strong> one early urlscan submission was public. Scans of suspected infrastructure should be private by default.</li>
+</ul>
+
+<h2>MITRE ATT&amp;CK</h2>
+<div class="scroll"><table>
+<tr><th>ID</th><th>Technique</th><th>Relevance</th></tr>
+<tr><td>T1583.001</td><td>Acquire Infrastructure: Domains</td><td>Keyword and TLD-swap lookalikes</td></tr>
+<tr><td>T1583.004</td><td>Acquire Infrastructure: Server</td><td>Dedicated host on 45.13.226[.]9</td></tr>
+<tr><td>T1608.003</td><td>Stage Capabilities: Install Digital Certificate</td><td>Certificate issued before content</td></tr>
+<tr><td>T1566.002</td><td>Phishing: Spearphishing Link</td><td>Anticipated use of mail-enabled lookalikes</td></tr>
+</table></div>
+
+<h2>Recommendations</h2>
+<ol>
+<li>Block onlinehmrc[.]com and its IP at email and web gateways.</li>
+<li>Route a takedown through the organisation's process (for UK government brands, the NCSC Takedown Service) with the 17-file evidence pack.</li>
+<li>Add the missed keyword variants to the defensive registration review.</li>
+<li>Daily re-resolution and CT monitoring of MEDIUM and LOW domains.</li>
+<li>Private re-scan around the 30 Oct certificate renewal.</li>
+</ol>
+
+<footer>Leonard Abanobi · SOC Analyst · CompTIA Security+ · <a href="https://github.com/Leomez17">github.com/Leomez17</a> · Lab exercise using public OSINT only; indicators defanged.</footer>
+</div>
+</body>
+</html>
