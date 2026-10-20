@@ -1,0 +1,2 @@
+2026-07-31	*.[pivot-domain-withheld],[pivot-domain-withheld]
+2026-08-01	*.onlinehmrc.com,onlinehmrc.com,onlinehmrc.com.[pivot-domain-withheld],www.onlinehmrc.com.[pivot-domain-withheld]

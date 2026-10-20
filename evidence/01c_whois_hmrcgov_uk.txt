@@ -1,0 +1,9 @@
+        Nominet was not able to match the registrant's name and/or address against a 3rd party source on 04-Jan-2024
+
+    Registrar:
+        Nom-IQ Limited t/a Com Laude [Tag = NOMIQ]
+        URL: http://www.comlaude.com
+--
+        Registered on: 28-Jun-2017
+        Expiry date:  28-Jun-2027
+        Last updated:  15-May-2026

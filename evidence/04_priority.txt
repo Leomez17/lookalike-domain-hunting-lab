@@ -1,0 +1,6 @@
+dictionary,online-hmrc.com,
+dictionary,onlinehmrc.com,
+tld-swap,hmrc.net,13.248.169.48
+tld-swap,hmrc.site,192.64.119.140
+tld-swap,hmrc.org,
+tld-swap,hmrc.uk,

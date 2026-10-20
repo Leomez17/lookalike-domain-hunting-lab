@@ -1,0 +1,11 @@
+domain,technique,created,registrar,hosting,mx,cert,urlscan,verdict,action
+onlinehmrc.com,dictionary,2025-09-26,Dynadot (privacy),45.13.226.9,self,LE 2026-08-01,none,HIGH,Takedown request + block + monitor cert renewal ~30 Oct
+hmrec.com,insertion,2026-03-04,Namecheap (privacy),Namecheap parking,email-forward,LE 2026-09-02,none,MEDIUM,Monitor DNS/MX changes
+hmrc.net,tld-swap,2025-01-07,Gname (redacted),parked 13.248.169.48,none,-,-,MEDIUM,Monitor
+hmrc.site,tld-swap,2021-09-30,Namecheap,parked 192.64.119.140,none,-,-,LOW,Watch
+hmrc.org,tld-swap,2001-02-08,eNom,none,self,-,-,LOW,Predates HMRC; periodic check
+online-hmrc.com,dictionary,2021-08-31,Com Laude (HMRC),defensive,-,-,-,BENIGN,Close
+hrmrc.com,insertion,2023-10-20,Beyaz Holding AS,-,M365,-,-,BENIGN,Close
+hmrdc.com,insertion,2006-10-28,HMRDC,-,self,-,-,BENIGN,Close
+hrrc.com,homoglyph,1998-01-20,Network Solutions,-,Yahoo,-,-,BENIGN,Close
+takedown_contacts,hosting=abuse@hosting-manage.com (ACRO58907-RIPE),registrar=abuse@dynadot.com

@@ -1,0 +1,12 @@
+netname:        YottaSrc-NET-45-13
+descr:          YottaSrc Hosting and Cloud Service
+country:        DE
+org-name:       YottaSrc
+descr:          Hosting and Cloud Services Provider
+country:        SA
+abuse-mailbox:  abuse@hosting-manage.com
+% Abuse contact for '45.13.226.0 - 45.13.226.255' is 'abuse@hosting-manage.com'
+abuse-c:        ACRO58907-RIPE
+abuse-c:        ACRO58907-RIPE
+   Registrar Abuse Contact Email: abuse@dynadot.com
+   Registrar Abuse Contact Phone: +16502620100

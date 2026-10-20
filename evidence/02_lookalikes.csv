@@ -1,0 +1,97 @@
+fuzzer,domain,dns_a,dns_aaaa,dns_mx,dns_ns,geoip
+*original,hmrc.com,18.185.24.46,2a05:d014:803:f30a:4c8d:5530:dac2:179,,ns0.demysdns.net,Germany
+addition,hmrcm.com,103.41.17.187,,,ns1.julydns.com,China
+addition,hmrcw.com,148.135.33.213,,,ns1.22.cn,United States
+addition,hmrcs.com,15.197.148.33,,,ns51.domaincontrol.com,Canada
+addition,hmrcl.com,156.253.146.103,,,a.share-dns.com,Hong Kong
+addition,hmrcc.com,18.185.24.46,2a05:d014:803:f30a:4c8d:5530:dac2:179,,ns0.demysdns.net,Germany
+addition,hmrco.com,207.148.248.143,,,!ServFail,United States
+addition,hmrck.com,217.65.156.180,2a02:4780:7f:4c50:b1c0:238e:8062:506e,alt1.aspmx.l.google.com,ns.wedos.com,Germany
+addition,hmrch.com,88.218.194.101,,,a.share-dns.com,Hong Kong
+addition,hmrcr.com,,,,musician.dnspod.net,
+bitsquatting,hmrk.com,13.248.169.48,,,ns1.afternic.com,Canada
+bitsquatting,hmvc.com,13.248.169.48,,,ns1.namefind.com,Canada
+bitsquatting,hmpc.com,135.148.227.165,,hmpc-com.mail.protection.outlook.com,ns39.worldnic.com,United States
+bitsquatting,imrc.com,139.162.174.209,2a01:7e01::2000:dff:fec1:5cdb,mail.mailerhost.net,damao.ns.giantpanda.com,Germany
+bitsquatting,hmsc.com,15.197.225.128,,hmsc-com.mail.protection.outlook.com,ns09.domaincontrol.com,Canada
+bitsquatting,jmrc.com,205.186.160.237,,in-mig04.hes.trendmicro.com,ns1.mediatemple.net,United States
+bitsquatting,hm2c.com,213.186.33.19,,mx0.ovh.net,dns17.ovh.net,France
+bitsquatting,hmrs.com,3.33.224.147,2600:9000:a413:2068:7cac:af4e:cf97:8818,,ns1.aftermarket.com,Canada
+bitsquatting,hmra.com,35.157.26.135,,,dns1.p06.nsone.net,Germany
+bitsquatting,hirc.com,35.215.123.60,,smtp.google.com,ns1.siteground.net,United States
+bitsquatting,hmzc.com,39.107.101.108,,,dns25.hichina.com,China
+bitsquatting,hmrb.com,43.153.249.198,,,dew.dnspod.net,Singapore
+bitsquatting,herc.com,44.194.7.27,,,ns-1220.awsdns-24.org,United States
+bitsquatting,h-rc.com,,,mx1.qiye.aliyun.com,dns15.hichina.com,
+bitsquatting,hlrc.com,,,mailstore1.secureserver.net,ns23.worldnic.com,
+bitsquatting,xmrc.com,,,,dns10.hichina.com,
+dictionary,claimhmrc.com,18.185.24.46,2a05:d014:803:f30a:4c8d:5530:dac2:179,,dns1.comlaude-dns.com,Germany
+dictionary,govhmrc.com,18.185.24.46,2a05:d014:803:f30a:4c8d:5530:dac2:179,,dns1.comlaude-dns.com,Germany
+dictionary,hmrc-rebate.com,18.185.24.46,,,ns0.demysdns.net,Germany
+dictionary,hmrc-refund.com,18.185.24.46,2a05:d014:803:f30a:4c8d:5530:dac2:179,,ns0.demysdns.net,Germany
+dictionary,hmrc-tax.com,18.185.24.46,2a05:d014:803:f30a:4c8d:5530:dac2:179,,dns1.comlaude-dns.com,Germany
+dictionary,hmrcclaim.com,18.185.24.46,2a05:d014:803:f30a:4c8d:5530:dac2:179,,ns0.demysdns.net,Germany
+dictionary,hmrcrebate.com,18.185.24.46,2a05:d014:803:f30a:4c8d:5530:dac2:179,,,Germany
+dictionary,hmrcrefund.com,18.185.24.46,2a05:d014:803:f30a:4c8d:5530:dac2:179,,ns0.demysdns.net,Germany
+dictionary,hmrctax.com,18.185.24.46,2a05:d014:803:f30a:4c8d:5530:dac2:179,,ns0.demysdns.net,Germany
+dictionary,refundhmrc.com,18.185.24.46,2a05:d014:803:f30a:4c8d:5530:dac2:179,,dns1.comlaude-dns.com,Germany
+dictionary,taxhmrc.com,18.185.24.46,2a05:d014:803:f30a:4c8d:5530:dac2:179,,dns1.comlaude-dns.com,Germany
+dictionary,verify-hmrc.com,18.185.24.46,2a05:d014:803:f30a:4c8d:5530:dac2:179,,ns0.demysdns.net,Germany
+dictionary,hmrc-online.com,195.171.114.178,,,ns0.demysdns.net,United Kingdom
+dictionary,hmrcgov.com,,,,ns0.demysdns.net,
+dictionary,online-hmrc.com,,2a05:d014:803:f30a:4c8d:5530:dac2:179,,,
+dictionary,onlinehmrc.com,,,onlinehmrc.com,ns1.srv-console.com,
+homoglyph,hnnre.com,104.21.5.29,2606:4700:3034::ac43:84d0,,elijah.ns.cloudflare.com,Canada
+homoglyph,hnnrc.com,104.21.65.193,2606:4700:3034::6815:41c1,,dorthy.ns.cloudflare.com,Canada
+homoglyph,hrnrc.com,104.21.66.251,2606:4700:3030::ac43:d2a9,,,Canada
+homoglyph,lhmrc.com,13.248.243.5,,,ns41.domaincontrol.com,Canada
+homoglyph,hrrc.com,172.172.161.84,,mx-biz.mail.am0.yahoodns.net,ns1.turbify.com,United States
+homoglyph,hrmrc.com,185.195.230.100,,hrmrc-com.mail.protection.outlook.com,cartman.ns.cloudflare.com,Turkey
+homoglyph,hmmrc.com,192.64.119.27,,,dns1.registrar-servers.com,United States
+homoglyph,lhmre.com,76.76.21.21,,lhmre-com.mail.protection.outlook.com,ns17.domaincontrol.com,United States
+homoglyph,hmre.com,91.195.241.232,,localhost,sl1.sedo.com,Germany
+homoglyph,hnrc.com,,,,ns1.ename.net,
+hyphenation,h-mrc.com,52.223.13.41,,,ns1.renewyourname.net,United States
+insertion,ghmrc.com,13.248.169.48,,,ns1.afternic.com,Canada
+insertion,nhmrc.com,13.248.169.48,,,ns1.namefind.com,Canada
+insertion,jhmrc.com,15.197.148.33,,jhmrc-com.mail.protection.outlook.com,ns17.domaincontrol.com,Canada
+insertion,hzmrc.com,156.234.67.10,,,monika.ns.cloudflare.com,Hong Kong
+insertion,uhmrc.com,185.77.97.33,2a02:4780:26:e43c:68a:7af6:f43b:e243,,ns1.dns-parking.com,United Kingdom
+insertion,hmrec.com,192.64.119.19,,eforward1.registrar-servers.com,dns1.registrar-servers.com,United States
+insertion,hmtrc.com,213.133.104.67,2a01:4f8:d0a:2773::2,www67.your-server.de,ns.second-ns.com,Germany
+insertion,hmprc.com,3.173.23.94,,,danica.ns.cloudflare.com,United States
+insertion,bhmrc.com,91.195.240.123,,,ns1.dnsowl.com,Germany
+insertion,hmerc.com,,,,dns23.hichina.com,
+insertion,hmrdc.com,,,hmrdc.com,eu.solidhosting.pro,
+omission,hmc.com,129.121.75.191,,,ns1.hover.com,United States
+omission,hrc.com,20.88.39.244,,,ns1.safesecureweb.com,United States
+omission,mrc.com,3.33.139.32,,,ns1.markmonitor.com,Canada
+omission,hmr.com,45.223.18.247,,eu-smtp-inbound-1.mimecast.com,ns1-04.azure-dns.com,United States
+repetition,hhmrc.com,198.185.159.144,,mxa.mailgun.org,ns-cloud-d1.googledomains.com,United States
+repetition,hmrrc.com,,,alt1.aspmx.l.google.com,coen.ns.cloudflare.com,
+replacement,hkrc.com,!ServFail,!ServFail,,!ServFail,
+replacement,ymrc.com,103.224.182.243,,park-mx.above.com,ns1.abovedomains.com,United States
+replacement,bmrc.com,13.248.169.48,,,,Canada
+replacement,hmec.com,13.248.169.48,,,ns1.afternic.com,Canada
+replacement,hmrd.com,13.248.169.48,,,ns1.afternic.com,Canada
+replacement,hmrf.com,13.248.169.48,,,ns1.afternic.com,Canada
+replacement,nmrc.com,13.248.169.48,,,ns1.afternic.com,Canada
+replacement,hjrc.com,139.162.174.209,2a01:7e01::2000:dff:fec1:5cdb,mail.mailerhost.net,damao.ns.giantpanda.com,Germany
+replacement,hmfc.com,174.133.24.42,,mx1-us1.ppe-hosted.com,ns89.worldnic.com,United States
+replacement,gmrc.com,192.33.191.48,,,gtmgrin.gmrc.com,United States
+replacement,hmtc.com,208.91.197.27,,,ns7.worldnic.com,United States
+replacement,hmrv.com,217.160.0.204,2001:8d8:100f:f000::2d0,mx00.ionos.de,ns1036.ui-dns.biz,Germany
+replacement,umrc.com,35.229.49.8,,umrc-com.mail.protection.outlook.com,dns101.register.com,United States
+replacement,hprc.com,37.202.7.190,,mx1.agenturserver.de,ns01.agenturserver.co,Germany
+replacement,hmrx.com,64.190.63.222,,,ns1.sedoparking.com,Germany
+replacement,hmdc.com,,,mail.mailerhost.net,damao.ns.giantpanda.com,
+replacement,zmrc.com,,,mail.intelliteam.com,dns101.register.com,
+tld-swap,hmrc.net,13.248.169.48,,,ns1.afternic.com,Canada
+tld-swap,hmrc.site,192.64.119.140,,,dns1.registrar-servers.com,United States
+tld-swap,hmrc.co.uk,195.171.114.178,,,ns0.demysdns.net,United Kingdom
+tld-swap,hmrc.info,195.171.114.178,,,ns0.demysdns.net,United Kingdom
+tld-swap,hmrc.org,,,hmrc.org,ns25.hostgator.com,
+tld-swap,hmrc.uk,,2a05:d014:803:f30a:4c8d:5530:dac2:179,,,
+transposition,mhrc.com,15.197.148.33,,alt1.aspmx.l.google.com,ns67.domaincontrol.com,Canada
+transposition,hmcr.com,162.215.226.6,,,ns1.whois.com,United States
+transposition,hrmc.com,173.236.243.27,,,ns-cloud-c1.googledomains.com,United States
